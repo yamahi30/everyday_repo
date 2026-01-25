@@ -3,6 +3,8 @@
 
 １：トークンの作成
 GitHunでトークンを作成
+・右上プロフ＞Settings＞Developer Settings＞Personal access tokens (classic)＞Generate new token
+https://qiita.com/RyutoYoda/items/c6908025c0aef4b35cdd
 
 ２：GitHunでHTPPSコードを取得してターミナルでクローンを行う
 git clone {HTPPSコード}
