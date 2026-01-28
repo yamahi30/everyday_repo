@@ -1,0 +1,7 @@
+⬛︎Udemy
+【Claude Codeでバイブコーディング】プログラミング未経験OK！はじめての AI 駆動開発でWebアプリを開発
+・ターミナルのコマンド復習
+
+・Node.jsの環境構築
+https://nodejs.org/ja/download
+

@@ -1,1 +1,21 @@
-学習日記の新規作成
+○学習日記の新規作成
+
+⬛︎Git のuser name と　user emailを構成していることを確認してください、というエラーが出る
+1. Gitのユーザー名とメールアドレスを設定する
+まず、ターミナル（あるいはGit Bashなど、あなたが使っている環境に応じて）を開きます。
+次に、以下のコマンドを使用してGitのユーザー名とメールアドレスを設定します。実際のユーザー名とメールアドレスには、自分のものを使用してください。
+
+git config --global user.name "あなたのユーザー名"
+git config --global user.email "あなたのメールアドレス"
+
+2. 再度コミットする
+
+
+⬛︎制作物
+・oshiTalk
+## 🛠️ 技術スタック
+* **Python / Streamlit** (Webアプリ基盤)
+* **Google Gemini 3 Flash** (LLM)
+* **SQLite** (データベース)
+* **Git / GitHub** (バージョン管理)
+➡️完成、GitHubにアップロード済み
