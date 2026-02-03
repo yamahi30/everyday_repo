@@ -1,9 +1,9 @@
-mkdir -p 202601
+mkdir -p 202602
 
-touch 202601/plan.txt
-touch 202601/result.txt
+touch 202602/plan.txt
+touch 202602/result.txt
 
-for day in {01..31}
+for day in {01..28}
 do
- touch 202601/$day.txt
+ touch 202602/$day.txt
 done
