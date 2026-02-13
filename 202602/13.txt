@@ -1,0 +1,39 @@
+# SNS自動化アプリ
+Google Driveの連携中
+1週間の上限を超えたので一旦休憩する。
+
+プログラムの変更以外で手元でできる設定などは行なっている
+
+ 追加した変更点:                                                                                               
+                                                                                                                
+  1. apps/api/src/routes/calendar.ts - カレンダー生成後にGoogle Driveへ保存                                     
+  2. apps/api/src/routes/style.ts - 文体学習データ保存時にGoogle Driveへ同期                                    
+  3. apps/api/src/routes/posts.ts - 保存BOXへの投稿追加/削除時にGoogle Driveへ同期                              
+  4. apps/api/src/routes/notes.ts - NOTE記事案の生成/更新/削除時にGoogle Driveへ同期                            
+                                                                                                                
+  使用方法:                                                                                                     
+                                                                                                                
+  .envファイルに以下を追加してください:                                                       
+                                                                                                                
+  USE_GOOGLE_DRIVE=true                                                                                         
+  GOOGLE_CLIENT_ID=your_client_id                                                                               
+  GOOGLE_CLIENT_SECRET=your_client_secret                                                                       
+  GOOGLE_REDIRECT_URI=http://localhost:3005/api/auth/google/callback                                            
+                                                                                                                
+  Google Drive連携を有効にするには:                                                                             
+  1. https://console.cloud.google.com/でプロジェクトを作成                                                      
+  2. Google Drive APIを有効化                                                                                   
+  3. OAuth 2.0クライアントIDを作成（Webアプリケーション）                                                       
+  4. リダイレクトURIに http://localhost:3005/api/auth/google/callback を追加                                    
+  5. 取得した認証情報を.envに設定                                                                               
+  6. USE_GOOGLE_DRIVE=true を設定                                                                               
+                                                                                                                
+  データは以下のフォルダ構造でGoogle Driveに保存されます:                                                       
+  ContentHub/                                                                                                   
+  ├── ContentCalendar/   # カレンダーデータ                                                                     
+  ├── NoteIdeas/         # NOTE記事案                                                                           
+  ├── StyleLearning/     # 文体学習データ                                                                       
+  ├── PostLearning/      # 投稿フィードバック                                                                   
+  ├── SavedPosts/        # 保存BOX                                                                              
+  └── Settings/          # 設定  
+
