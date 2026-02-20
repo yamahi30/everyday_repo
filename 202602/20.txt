@@ -1,0 +1,83 @@
+ Google Drive 保存構造                                                                                                          
+                                                                                                                                 
+  ContentHub/                            ← ルートフォルダ                                                                        
+  │                                                                                                                              
+  ├── ContentCalendar/                   ← コンテンツカレンダー                                                                  
+  │   └── YYYY-MM.json                   例: 2026-02.json                                                                        
+  │                                                                                                                              
+  ├── NoteIdeas/                         ← NOTE記事案                                                                            
+  │   └── YYYY-MM.json                   例: 2026-02.json                                                                        
+  │                                                                                                                              
+  ├── StyleLearning/                     ← 文体学習                                                                              
+  │   ├── note_free.json                 NOTE無料記事（アフィなし）                                                              
+  │   ├── note_affiliate.json            NOTE無料記事（アフィあり）                                                              
+  │   ├── note_membership.json           NOTEメンバーシップ記事                                                                  
+  │   ├── note_paid.json                 NOTE有料記事                                                                            
+  │   ├── x_style.json                   X投稿                                                                                   
+  │   └── threads_style.json             Threads投稿                                                                             
+  │                                                                                                                              
+  ├── PostLearning/                      ← 投稿フィードバック                                                                    
+  │   ├── x_feedback.json                X投稿のフィードバック                                                                   
+  │   └── threads_feedback.json          Threads投稿のフィードバック                                                             
+  │                                                                                                                              
+  ├── SavedPosts/                        ← 保存BOX                                                                               
+  │   ├── x_saved.json                   X投稿の保存リスト                                                                       
+  │   └── threads_saved.json             Threads投稿の保存リスト                                                                 
+  │                                                                                                                              
+  ├── Settings/                          ← 設定                                                                                  
+  │   └── my-account.json                マイアカウント情報                                                                      
+  │                                                                                                                              
+  ├── Context/                           ← コンテキスト管理                                                                      
+  │   ├── market-research.json           市場調査                                                                                
+  │   ├── competitor-analysis.json       競合分析                                                                                
+  │   ├── custom-instructions.json       カスタム指示                                                                            
+  │   └── persona.json                   ペルソナ                                                                                
+  │                                                                                                                              
+  └── GoodPosts/                         ← 投稿済み（良い投稿）                                                                  
+      ├── x_good_posts.json              X投稿済み一覧                                                                           
+      └── threads_good_posts.json        Threads投稿済み一覧                                                                     
+                                                                                                                                 
+  ---                                                                                                                            
+  機能とフォルダの対応表                                                                                                         
+  ┌──────────────────────┬─────────────────┬────────────────────────────┐                                                        
+  │         機能         │    フォルダ     │          ファイル          │                                                        
+  ├──────────────────────┼─────────────────┼────────────────────────────┤                                                        
+  │ コンテンツカレンダー │ ContentCalendar │ YYYY-MM.json               │                                                        
+  ├──────────────────────┼─────────────────┼────────────────────────────┤                                                        
+  │ NOTE記事案           │ NoteIdeas       │ YYYY-MM.json               │                                                        
+  ├──────────────────────┼─────────────────┼────────────────────────────┤                                                        
+  │ 文体学習             │ StyleLearning   │ {type}.json                │                                                        
+  ├──────────────────────┼─────────────────┼────────────────────────────┤                                                        
+  │ 投稿フィードバック   │ PostLearning    │ {platform}_feedback.json   │                                                        
+  ├──────────────────────┼─────────────────┼────────────────────────────┤                                                        
+  │ 保存BOX              │ SavedPosts      │ {platform}_saved.json      │                                                        
+  ├──────────────────────┼─────────────────┼────────────────────────────┤                                                        
+  │ マイアカウント       │ Settings        │ my-account.json            │                                                        
+  ├──────────────────────┼─────────────────┼────────────────────────────┤                                                        
+  │ 市場調査             │ Context         │ market-research.json       │                                                        
+  ├──────────────────────┼─────────────────┼────────────────────────────┤                                                        
+  │ 競合分析             │ Context         │ competitor-analysis.json   │                                                        
+  ├──────────────────────┼─────────────────┼────────────────────────────┤                                                        
+  │ カスタム指示         │ Context         │ custom-instructions.json   │                                                        
+  ├──────────────────────┼─────────────────┼────────────────────────────┤                                                        
+  │ ペルソナ             │ Context         │ persona.json               │                                                        
+  ├──────────────────────┼─────────────────┼────────────────────────────┤                                                        
+  │ 投稿済み分析         │ GoodPosts       │ {platform}_good_posts.json │                                                        
+  └──────────────────────┴─────────────────┴────────────────────────────┘                                                        
+  ---                                                                                                                            
+  重複フォルダの整理                                                                                                             
+                                                                                                                                 
+  Google Driveに重複フォルダがある場合、以下の手順で整理できます。                                                               
+                                                                                                                                 
+  1. Google Driveを開く → ContentHubフォルダを確認                                                                               
+  2. 重複しているフォルダを特定（例: ContentCalendarが2つある等）                                                                
+  3. 片方のフォルダ内のファイルを確認                                                                                            
+    - 古い方・空の方を削除                                                                                                       
+    - データがある場合は、新しい方にコピーしてから削除                                                                           
+  4. アプリを再起動してキャッシュをクリア                                                                                        
+                                                                                                                                 
+  重複の原因は、findOrCreateFolderメソッドがフォルダ検索時に最初の1件しか見ていないため、2件目以降のフォルダが存在しても無視され 
+  る点にあります。                                                                                                               
+                                                                                                                                 
+  現在のGoogle                                                                                                                   
+  Drive上の実際のフォルダ構造を確認して、どのフォルダが重複しているか教えていただければ、整理の方針を具体的に提案できます。  
